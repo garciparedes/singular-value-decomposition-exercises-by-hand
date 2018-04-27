@@ -23,7 +23,7 @@
   \maketitle
 
   \begin{align}
-    A_{mxn} &= U_{mxm} \Sigma_{mxn} V_{nxn}^T
+    A_{mxn} &= U_{mxm} \cdot \Sigma_{mxn} \cdot V_{nxn}^T
   \end{align}
 
   \section{Ejercicio 1}
@@ -80,7 +80,6 @@
       6 - \lambda & 11 \\
       11 & 21 - \lambda
     \end{vmatrix}
-    = (6 - \lambda) (21 - lambda) - 121
     = \lambda ^ 2 - 27 \lambda + 5
   \end{align}
 
@@ -126,8 +125,8 @@
     \end{bmatrix}
     \cdot
     \begin{bmatrix}
-      x_1 \\
-      x_2
+      v_{11}^* \\
+      v_{12}^*
     \end{bmatrix}
     =
     \begin{bmatrix}
@@ -135,11 +134,7 @@
       0
     \end{bmatrix}
     \Rightarrow
-    \begin{bmatrix}
-      q \\
-      \frac{15 + \sqrt{709}}{22} q
-    \end{bmatrix}
-    \Rightarrow
+    v_1^*
     \begin{bmatrix}
       1 \\
       \frac{15 + \sqrt{709}}{22}
@@ -151,8 +146,8 @@
     \end{bmatrix}
     \cdot
     \begin{bmatrix}
-      x_1 \\
-      x_2
+      v_{21}^* \\
+      v_{22}^*
     \end{bmatrix}
     =
     \begin{bmatrix}
@@ -160,11 +155,7 @@
       0
     \end{bmatrix}
     \Rightarrow
-    \begin{bmatrix}
-      q \\
-      \frac{15 - \sqrt{709}}{22} q
-    \end{bmatrix}
-    \Rightarrow
+    v_2^*
     \begin{bmatrix}
       1 \\
       \frac{15 - \sqrt{709}}{22}
@@ -175,7 +166,7 @@
   \begin{align}
     V^* =
     \begin{bmatrix}
-      v_1^* & v_2*
+      v_1^* & v_2^*
     \end{bmatrix} =
     \begin{bmatrix}
       1 & 1 \\
@@ -247,7 +238,7 @@
         \frac{1}{2} \\
         1
       \end{bmatrix}\\
-      A^T A u_3 &= 0
+      AA^T u_3 &= 0
       \Rightarrow
       \begin{bmatrix}
         2 & 3 & 6 \\
@@ -267,17 +258,18 @@
         0
       \end{bmatrix}
       \Rightarrow
-      u_3 =
-      \begin{bmatrix}
-        0 \\
-        -2 \\
-        q
-      \end{bmatrix}
-      \Rightarrow
+      u_3^* =
       \begin{bmatrix}
         0 \\
         -2 \\
         1
+      \end{bmatrix}
+      \Rightarrow
+      u_3 =
+      \begin{bmatrix}
+        0 \\
+        \frac{-2}{\sqrt{5}} \\
+        \frac{1}{\sqrt{5}}
       \end{bmatrix}
     \end{align}
 
@@ -288,8 +280,8 @@
       \end{bmatrix} =
       \begin{bmatrix}
         \frac{-23-\sqrt{709}}{12} & \frac{-23+\sqrt{709}}{12} & 0 \\
-        \frac{1}{2} & \frac{1}{2} & - 2 \\
-        1 & 1 & 1
+        \frac{1}{2} & \frac{1}{2} & \frac{-2}{\sqrt{5}} \\
+        1 & 1 & \frac{1}{\sqrt{5}}
       \end{bmatrix}
     \end{align}
 
@@ -304,8 +296,8 @@
       U &=
       \begin{bmatrix}
         \frac{-23-\sqrt{709}}{12} & \frac{-23+\sqrt{709}}{12} & 0 \\
-        \frac{1}{2} & \frac{1}{2} & - 2 \\
-        1 & 1 & 1
+        \frac{1}{2} & \frac{1}{2} & \frac{-2}{\sqrt{5}} \\
+        1 & 1 & \frac{1}{\sqrt{5}}
       \end{bmatrix} \\
       \Sigma &=
       \begin{bmatrix}
@@ -329,8 +321,8 @@
       =
       \begin{bmatrix}
         \frac{-23-\sqrt{709}}{12} & \frac{-23+\sqrt{709}}{12} & 0 \\
-        \frac{1}{2} & \frac{1}{2} & - 2 \\
-        1 & 1 & 1
+        \frac{1}{2} & \frac{1}{2} & \frac{-2}{\sqrt{5}} \\
+        1 & 1 & \frac{1}{\sqrt{5}}
       \end{bmatrix}
       \cdot
       \begin{bmatrix}
@@ -347,6 +339,328 @@
 
 
   \section{Ejercicio 2}
+
+
+  \begin{equation}
+    A =
+    \begin{bmatrix}
+      1 & -1 & 2\\
+      1 & 2 & -1\\
+      2 & 1 & 1
+    \end{bmatrix}
+  \end{equation}
+
+
+  \begin{equation}
+    A^TA =
+    \begin{bmatrix}
+      6 & 3 & 3 \\
+      3 & 6 & -3 \\
+      3 & -3 & 6
+    \end{bmatrix}
+  \end{equation}
+
+  \begin{equation}
+    AA^T =
+    \begin{bmatrix}
+      6 & -3 & 3 \\
+      -3 & 6 & 3 \\
+      3 & 3 & 6
+    \end{bmatrix}
+  \end{equation}
+
+
+  \begin{align}
+    det(A^T A - \lambda I)
+    = \begin{vmatrix}
+      6-\lambda & 3 & 3 \\
+      3 & 6-\lambda & -3 \\
+      3 & -3 & 6-\lambda
+    \end{vmatrix}
+    = -\lambda^3 + 18 \lambda ^ 2 - 81 \lambda
+  \end{align}
+
+
+  \begin{align}
+    det(A^T A - \lambda I) = 0
+    \Rightarrow
+    \lambda =
+    \begin{cases}
+    9 \quad (\text{multiplicidad doble}) \\
+    0 \quad (\text{multiplicidad simple})
+    \end{cases}
+  \end{align}
+
+  \begin{align}
+    \Sigma =
+    \begin{bmatrix}
+      \sigma_1 & 0  & 0\\
+      0 & \sigma_1  & 0 \\
+      0 & 0 & \sigma_2
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \sqrt{\lambda_1} & 0 & 0 \\
+      0 & \sqrt{\lambda_1} & 0\\
+      0 & 0 & \sqrt{\lambda_2}
+    \end{bmatrix} =
+    \begin{bmatrix}
+      3 & 0 & 0 \\
+      0 & 3 & 0 \\
+      0 & 0 & 0
+    \end{bmatrix}
+  \end{align}
+
+
+
+  \begin{align}
+    \lambda_1 = 3 &\Rightarrow
+    \begin{bmatrix}
+      6-3 & 3 & 3 \\
+      3 & 6-3 & -3 \\
+      3 & -3 & 6-3
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      v_{11}^* & v_{21}^*\\
+      v_{12}^* & v_{23}^*\\
+      v_{13}^* & v_{23}^*
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0
+    \end{bmatrix}
+    \Rightarrow
+    v_1^* =
+    \begin{bmatrix}
+      1 \\
+      0 \\
+      1
+    \end{bmatrix},
+    v_2^* =
+    \begin{bmatrix}
+      1 \\
+      1 \\
+      0
+    \end{bmatrix}\\
+    \lambda_1 = 3 &\Rightarrow
+    \begin{bmatrix}
+      6 & 3 & 3 \\
+      3 & 6 & -3 \\
+      3 & -3 & 6
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      v_{31}^* \\
+      v_{32}^* \\
+      v_{33}^* \\
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0
+    \end{bmatrix}
+    \Rightarrow
+    v_3^* =
+    \begin{bmatrix}
+      -1 \\
+      1 \\
+      1
+    \end{bmatrix}
+  \end{align}
+
+  \begin{align}
+    V^* =
+    \begin{bmatrix}
+      v_1^* & v_2^* & v_3^*
+    \end{bmatrix} =
+    \begin{bmatrix}
+      1 & 1 & -1 \\
+      0 & 1 & 1 \\
+      1 & 0 & 1
+    \end{bmatrix}
+  \end{align}
+
+
+  \begin{align}
+    v_1 &= \frac{v_1^*}{\norm{v_1^*}} =
+    \begin{bmatrix}
+      \frac{1}{\sqrt{2}} \\
+      0 \\
+      \frac{1}{\sqrt{2}}
+    \end{bmatrix} \\
+    v_2 &= \frac{v_2^* - \langle v_2^*,v_1 \rangle v_1}{\norm{v_2^* - \langle v_2^*,v_1 \rangle v_1}} =
+    \begin{bmatrix}
+      \frac{1}{\sqrt{6}} \\
+      \sqrt{\frac{2}{3}} \\
+      \frac{-1}{\sqrt{6}}
+    \end{bmatrix} \\
+    v_3 &= \frac{v_3^* - \langle v_3^*,v_1 \rangle v_1 - \langle v_3^*,v_2 \rangle v_2}{\norm{v_3^* - \langle v_3^*,v_1 \rangle v_1 - \langle v_3^*,v_2 \rangle v_2}} =
+    \begin{bmatrix}
+      \frac{-1}{\sqrt{3}} \\
+      \frac{1}{\sqrt{3}} \\
+      \frac{1}{\sqrt{3}}
+    \end{bmatrix} \\
+  \end{align}
+
+
+  \begin{align}
+    V =
+    \begin{bmatrix}
+      v_1 & v_2 & v_3
+    \end{bmatrix} =
+    \begin{bmatrix}
+      \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & \frac{-1}{\sqrt{3}} \\
+      0 & \sqrt{\frac{2}{3}} &\frac{1}{\sqrt{3}} \\
+      \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{6}} & \frac{1}{\sqrt{3}} \\
+    \end{bmatrix}
+  \end{align}
+
+  \begin{align}
+    u_1 &=
+    \frac{1}{\sigma_1}Av_1 =
+    \frac{1}{3}
+    \begin{bmatrix}
+      1 & -1 & 2\\
+      1 & 2 & -1\\
+      2 & 1 & 1
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      \frac{1}{\sqrt{2}} \\
+      0 \\
+      \frac{1}{\sqrt{2}}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \frac{1}{\sqrt{2}} \\
+      0 \\
+      \frac{1}{\sqrt{2}}
+    \end{bmatrix} \\
+    u_2 &=
+    \frac{1}{\sigma_2}Av_2 =
+    \frac{1}{3}
+    \begin{bmatrix}
+      1 & -1 & 2\\
+      1 & 2 & -1\\
+      2 & 1 & 1
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      \frac{1}{\sqrt{6}} \\
+      \sqrt{\frac{2}{3}} \\
+      \frac{-1}{\sqrt{6}}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \frac{-1}{\sqrt{6}} \\
+      \sqrt{\frac{2}{3}} \\
+      \frac{1}{\sqrt{6}}
+    \end{bmatrix}\\
+    A A^T u_3 &= 0
+    \Rightarrow
+    \begin{bmatrix}
+      6 & -3 & 3 \\
+      -3 & 6 & 3 \\
+      3 & 3 & 6
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      u_{31}^* \\
+      u_{32}^* \\
+      u_{33}^*
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0
+    \end{bmatrix}
+    \Rightarrow
+    u_3^* =
+    \begin{bmatrix}
+      -1 \\
+      1 \\
+      1
+    \end{bmatrix}
+    \Rightarrow
+    u_3 =
+    \begin{bmatrix}
+      \frac{-1}{\sqrt{3}} \\
+      \frac{1}{\sqrt{3}} \\
+      \frac{1}{\sqrt{3}}
+    \end{bmatrix}
+  \end{align}
+
+
+  \begin{align}
+    U =
+    \begin{bmatrix}
+      u_1 & u_2 & u_3
+    \end{bmatrix} =
+    \begin{bmatrix}
+      \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{6}} & \frac{-1}{\sqrt{3}} \\
+      0 & \sqrt{\frac{2}{3}} & \frac{1}{\sqrt{3}} \\
+      \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}}
+    \end{bmatrix}
+  \end{align}
+
+
+  \begin{align}
+    A &=
+    \begin{bmatrix}
+      1 & -1 & 2\\
+      1 & 2 & -1\\
+      2 & 1 & 1
+    \end{bmatrix} \\
+    U &=
+    \begin{bmatrix}
+      \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{6}} & \frac{-1}{\sqrt{3}} \\
+      0 & \sqrt{\frac{2}{3}} & \frac{1}{\sqrt{3}} \\
+      \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}}
+    \end{bmatrix} \\
+    \Sigma &=
+    \begin{bmatrix}
+      3 & 0 & 0\\
+      0 & 3 & 0\\
+      0 & 0 & 0
+    \end{bmatrix} \\
+    V &=
+    \begin{bmatrix}
+      \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & \frac{-1}{\sqrt{3}} \\
+      0 & \sqrt{\frac{2}{3}} &\frac{1}{\sqrt{3}} \\
+      \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{6}} & \frac{1}{\sqrt{3}} \\
+    \end{bmatrix}
+  \end{align}
+
+  \begin{align}
+    \begin{bmatrix}
+      1 & -1 & 2\\
+      1 & 2 & -1\\
+      2 & 1 & 1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{6}} & \frac{-1}{\sqrt{3}} \\
+      0 & \sqrt{\frac{2}{3}} & \frac{1}{\sqrt{3}} \\
+      \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}}
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      3 & 0 & 0\\
+      0 & 3 & 0\\
+      0 & 0 & 0
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\
+      \frac{1}{\sqrt{6}} & \sqrt{\frac{2}{3}} & \frac{-1}{\sqrt{6}} \\
+      \frac{-1}{\sqrt{3}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} \\
+    \end{bmatrix}
+  \end{align}
 
 
 \end{document}
