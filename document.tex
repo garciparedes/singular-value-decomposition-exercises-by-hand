@@ -215,9 +215,12 @@
       \end{bmatrix}
       =
       \begin{bmatrix}
-        \frac{-23-\sqrt{709}}{12} \\
-        \frac{1}{2} \\
-        1
+          \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +
+          \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} \\
+          \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +2
+          \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} \\
+          \frac{2\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +4
+          \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}}
       \end{bmatrix} \\
       u_2 &=
       \frac{1}{\sigma_2}Av_2 =
@@ -234,10 +237,12 @@
       \end{bmatrix}
       =
       \begin{bmatrix}
-        \frac{-23+\sqrt{709}}{12} \\
-        \frac{1}{2} \\
-        1
-      \end{bmatrix}\\
+        \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} \\
+        \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + 2
+        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} \\
+        \frac{2\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} +4
+        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}}
+      \end{bmatrix} \\
       AA^T u_3 &= 0
       \Rightarrow
       \begin{bmatrix}
@@ -279,9 +284,14 @@
         u_1 & u_2 & u_3
       \end{bmatrix} =
       \begin{bmatrix}
-        \frac{-23-\sqrt{709}}{12} & \frac{-23+\sqrt{709}}{12} & 0 \\
-        \frac{1}{2} & \frac{1}{2} & \frac{-2}{\sqrt{5}} \\
-        1 & 1 & \frac{1}{\sqrt{5}}
+        \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +
+        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & 0 \\
+        \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +2
+        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + 2
+        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{-2}{\sqrt{5}} \\
+        \frac{2\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +4
+        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{2\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} +4
+        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{1}{\sqrt{5}}
       \end{bmatrix}
     \end{align}
 
@@ -295,9 +305,14 @@
       \end{bmatrix} \\
       U &=
       \begin{bmatrix}
-        \frac{-23-\sqrt{709}}{12} & \frac{-23+\sqrt{709}}{12} & 0 \\
-        \frac{1}{2} & \frac{1}{2} & \frac{-2}{\sqrt{5}} \\
-        1 & 1 & \frac{1}{\sqrt{5}}
+        \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +
+        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & 0 \\
+        \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +2
+        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + 2
+        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{-2}{\sqrt{5}} \\
+        \frac{2\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +4
+        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{2\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} +4
+        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{1}{\sqrt{5}}
       \end{bmatrix} \\
       \Sigma &=
       \begin{bmatrix}
@@ -311,32 +326,6 @@
         \frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} & \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}
       \end{bmatrix}
     \end{align}
-
-    \begin{align}
-      \begin{bmatrix}
-        1 & 1\\
-        1 & 2\\
-        2 & 4
-      \end{bmatrix}
-      =
-      \begin{bmatrix}
-        \frac{-23-\sqrt{709}}{12} & \frac{-23+\sqrt{709}}{12} & 0 \\
-        \frac{1}{2} & \frac{1}{2} & \frac{-2}{\sqrt{5}} \\
-        1 & 1 & \frac{1}{\sqrt{5}}
-      \end{bmatrix}
-      \cdot
-      \begin{bmatrix}
-        \sqrt{\frac{27 + \sqrt{709}}{2}} & 0 \\
-        0 & \sqrt{\frac{27 - \sqrt{709}}{2}} \\
-        0 & 0
-      \end{bmatrix}
-      \cdot
-      \begin{bmatrix}
-        \frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} &  \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}  \\
-        \frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} & \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}
-      \end{bmatrix}
-    \end{align}
-
 
   \section{Ejercicio 2}
 
@@ -636,31 +625,6 @@
     \end{bmatrix}
   \end{align}
 
-  \begin{align}
-    \begin{bmatrix}
-      1 & -1 & 2\\
-      1 & 2 & -1\\
-      2 & 1 & 1
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-      \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{6}} & \frac{-1}{\sqrt{3}} \\
-      0 & \sqrt{\frac{2}{3}} & \frac{1}{\sqrt{3}} \\
-      \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}}
-    \end{bmatrix}
-    \cdot
-    \begin{bmatrix}
-      3 & 0 & 0\\
-      0 & 3 & 0\\
-      0 & 0 & 0
-    \end{bmatrix}
-    \cdot
-    \begin{bmatrix}
-      \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\
-      \frac{1}{\sqrt{6}} & \sqrt{\frac{2}{3}} & \frac{-1}{\sqrt{6}} \\
-      \frac{-1}{\sqrt{3}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} \\
-    \end{bmatrix}
-  \end{align}
 
 
 \end{document}
