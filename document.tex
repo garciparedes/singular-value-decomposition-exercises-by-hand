@@ -4,7 +4,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[spanish, es-tabla]{babel}
-\usepackage[margin={10mm, 22mm}]{geometry}
+\usepackage[margin={20mm, 22mm}]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -28,6 +28,9 @@
 
   \section{Ejercicio 1}
 
+  \paragraph{}
+  La matriz a la cual se aplica la \emph{descomposición en valores singulares} es:
+
   \begin{equation}
     A =
     \begin{bmatrix}
@@ -36,6 +39,9 @@
       2 & 4
     \end{bmatrix}
   \end{equation}
+
+  \paragraph{}
+  Para ello necesitamos calcular la multiplicación de $A$ por su transpuesta en los dos sentidos (mantienen el rango):
 
   \begin{align}
     A^T A &=
@@ -73,6 +79,8 @@
     \end{bmatrix} \\
   \end{align}
 
+  \paragraph{}
+  Seguidamente, buscamos los autovalores en la de menor dimensión:
 
   \begin{align}
     det(A^T A - \lambda I)
@@ -94,7 +102,8 @@
     \end{cases}
   \end{align}
 
-
+  \paragraph{}
+  A partir de los autovalores obtenemos los valores singulares:
 
   \begin{align}
     \Sigma =
@@ -116,6 +125,8 @@
     \end{bmatrix}
   \end{align}
 
+  \paragraph{}
+  Ahora calculamos los autovectores asociados a cada autovalor:
 
   \begin{align}
     \lambda_1 = \frac{27 + \sqrt{709}}{2} &\Rightarrow
@@ -174,161 +185,171 @@
     \end{bmatrix}
   \end{align}
 
-    \begin{align}
-      v_1 &= \frac{v_1^*}{\norm{v_1^*}} =
-      \begin{bmatrix}
-        \frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} \\
-        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}
-      \end{bmatrix} \\
-      v_2 &= \frac{v_2^* - \langle v_2^*,v_1 \rangle v_1}{\norm{v_2^* - \langle v_2^*,v_1 \rangle v_1}} =
-      \begin{bmatrix}
-        \frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} \\
-        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}
-      \end{bmatrix} \\
-    \end{align}
+  \paragraph{}
+  El siguiente paso es normalizar la matriz de autovectores obtenida para llegar a $V$:
+
+  \begin{align}
+    v_1 &= \frac{v_1^*}{\norm{v_1^*}} =
+    \begin{bmatrix}
+      \frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} \\
+      \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}
+    \end{bmatrix} \\
+    v_2 &= \frac{v_2^* - \langle v_2^*,v_1 \rangle v_1}{\norm{v_2^* - \langle v_2^*,v_1 \rangle v_1}} =
+    \begin{bmatrix}
+      \frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} \\
+      \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}
+    \end{bmatrix}
+  \end{align}
 
 
-    \begin{align}
-      V =
-      \begin{bmatrix}
-        v_1 & v_2
-      \end{bmatrix} =
-      \begin{bmatrix}
-        \frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} & \frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}  \\
-        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} & \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}
-      \end{bmatrix}
-    \end{align}
+  \begin{align}
+    V =
+    \begin{bmatrix}
+      v_1 & v_2
+    \end{bmatrix} =
+    \begin{bmatrix}
+      \frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} & \frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}  \\
+      \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} & \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}
+    \end{bmatrix}
+  \end{align}
 
-    \begin{align}
-      u_1 &=
-      \frac{1}{\sigma_1}Av_1 =
-      \frac{1}{\sqrt{\frac{27 + \sqrt{709}}{2}}}
-      \begin{bmatrix}
-        1 & 1\\
-        1 & 2\\
-        2 & 4
-      \end{bmatrix}
-      \cdot
-      \begin{bmatrix}
-        \frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} \\
-        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}
-      \end{bmatrix}
-      =
-      \begin{bmatrix}
-          \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +
-          \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} \\
-          \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +2
-          \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} \\
-          \frac{2\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +4
-          \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}}
-      \end{bmatrix} \\
-      u_2 &=
-      \frac{1}{\sigma_2}Av_2 =
-      \frac{1}{\sqrt{\frac{27 - \sqrt{709}}{2}}}
-      \begin{bmatrix}
-        1 & 1\\
-        1 & 2\\
-        2 & 4
-      \end{bmatrix}
-      \cdot
-      \begin{bmatrix}
-        \frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} \\
-        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}
-      \end{bmatrix}
-      =
-      \begin{bmatrix}
-        \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} \\
-        \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + 2
-        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} \\
-        \frac{2\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} +4
-        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}}
-      \end{bmatrix} \\
-      AA^T u_3 &= 0
-      \Rightarrow
-      \begin{bmatrix}
-        2 & 3 & 6 \\
-        2 & 5 & 10 \\
-        6 & 10 & 20
-      \end{bmatrix}
-      \cdot
-      \begin{bmatrix}
-        u_{31} \\
-        u_{32} \\
-        u_{33}
-      \end{bmatrix}
-      =
-      \begin{bmatrix}
-        0 \\
-        0 \\
-        0
-      \end{bmatrix}
-      \Rightarrow
-      u_3^* =
-      \begin{bmatrix}
-        0 \\
-        -2 \\
-        1
-      \end{bmatrix}
-      \Rightarrow
-      u_3 =
-      \begin{bmatrix}
-        0 \\
-        \frac{-2}{\sqrt{5}} \\
-        \frac{1}{\sqrt{5}}
-      \end{bmatrix}
-    \end{align}
+  \paragraph{}
+  Por último, obtenemos los vectores de $U$ a partir de las propiedades que se indican:
 
-    \begin{align}
-      U =
-      \begin{bmatrix}
-        u_1 & u_2 & u_3
-      \end{bmatrix} =
-      \begin{bmatrix}
+  \begin{align}
+    u_1 &=
+    \frac{1}{\sigma_1}Av_1 =
+    \frac{1}{\sqrt{\frac{27 + \sqrt{709}}{2}}}
+    \begin{bmatrix}
+      1 & 1\\
+      1 & 2\\
+      2 & 4
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      \frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} \\
+      \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
         \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +
-        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & 0 \\
+        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} \\
         \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +2
-        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + 2
-        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{-2}{\sqrt{5}} \\
+        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} \\
         \frac{2\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +4
-        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{2\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} +4
-        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{1}{\sqrt{5}}
-      \end{bmatrix}
-    \end{align}
+        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}}
+    \end{bmatrix} \\
+    u_2 &=
+    \frac{1}{\sigma_2}Av_2 =
+    \frac{1}{\sqrt{\frac{27 - \sqrt{709}}{2}}}
+    \begin{bmatrix}
+      1 & 1\\
+      1 & 2\\
+      2 & 4
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      \frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} \\
+      \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} \\
+      \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + 2
+      \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} \\
+      \frac{2\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} +4
+      \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}}
+    \end{bmatrix} \\
+    AA^T u_3 &= 0
+    \Rightarrow
+    \begin{bmatrix}
+      2 & 3 & 6 \\
+      2 & 5 & 10 \\
+      6 & 10 & 20
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      u_{31} \\
+      u_{32} \\
+      u_{33}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0
+    \end{bmatrix}
+    \Rightarrow
+    u_3^* =
+    \begin{bmatrix}
+      0 \\
+      -2 \\
+      1
+    \end{bmatrix}
+    \Rightarrow
+    u_3 =
+    \begin{bmatrix}
+      0 \\
+      \frac{-2}{\sqrt{5}} \\
+      \frac{1}{\sqrt{5}}
+    \end{bmatrix}
+  \end{align}
 
+  \begin{align}
+    U =
+    \begin{bmatrix}
+      u_1 & u_2 & u_3
+    \end{bmatrix} =
+    \begin{bmatrix}
+      \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +
+      \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & 0 \\
+      \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +2
+      \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + 2
+      \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{-2}{\sqrt{5}} \\
+      \frac{2\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +4
+      \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{2\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} +4
+      \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{1}{\sqrt{5}}
+    \end{bmatrix}
+  \end{align}
 
-    \begin{align}
-      A &=
-      \begin{bmatrix}
-        1 & 1\\
-        1 & 2\\
-        2 & 4
-      \end{bmatrix} \\
-      U &=
-      \begin{bmatrix}
-        \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +
-        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & 0 \\
-        \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +2
-        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + 2
-        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{-2}{\sqrt{5}} \\
-        \frac{2\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +4
-        \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{2\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} +4
-        \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{1}{\sqrt{5}}
-      \end{bmatrix} \\
-      \Sigma &=
-      \begin{bmatrix}
-        \sqrt{\frac{27 + \sqrt{709}}{2}} & 0 \\
-        0 & \sqrt{\frac{27 - \sqrt{709}}{2}} \\
-        0 & 0
-      \end{bmatrix} \\
-      V^T &=
-      \begin{bmatrix}
-        \frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} &  \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}  \\
-        \frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} & \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}
-      \end{bmatrix}
-    \end{align}
+  \paragraph{}
+  Las matrices resultantes se muestran a continuación:
+
+  \begin{align}
+    A &=
+    \begin{bmatrix}
+      1 & 1\\
+      1 & 2\\
+      2 & 4
+    \end{bmatrix} \\
+    U &=
+    \begin{bmatrix}
+      \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +
+      \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & 0 \\
+      \frac{\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +2
+      \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} + 2
+      \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{-2}{\sqrt{5}} \\
+      \frac{2\frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} +4
+      \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 + \sqrt{709}}{2}}} & \frac{2\frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} +4
+      \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}}{\sqrt{\frac{27 - \sqrt{709}}{2}}} & \frac{1}{\sqrt{5}}
+    \end{bmatrix} \\
+    \Sigma &=
+    \begin{bmatrix}
+      \sqrt{\frac{27 + \sqrt{709}}{2}} & 0 \\
+      0 & \sqrt{\frac{27 - \sqrt{709}}{2}} \\
+      0 & 0
+    \end{bmatrix} \\
+    V^T &=
+    \begin{bmatrix}
+      \frac{1}{\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}} &  \frac{15 + \sqrt{709}}{22\sqrt{1 + \frac{(15 + \sqrt{709})^2}{484}}}  \\
+      \frac{1}{\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}} & \frac{15 - \sqrt{709}}{22\sqrt{1 + \frac{(- 15 + \sqrt{709})^2}{484}}}
+    \end{bmatrix}
+  \end{align}
 
   \section{Ejercicio 2}
 
+  \paragraph{}
+  La matriz a la cual se aplica la \emph{descomposición en valores singulares} es:
 
   \begin{equation}
     A =
@@ -339,6 +360,8 @@
     \end{bmatrix}
   \end{equation}
 
+  \paragraph{}
+  Para ello necesitamos calcular la multiplicación de $A$ por su transpuesta en los dos sentidos (mantienen el rango):
 
   \begin{equation}
     A^TA =
@@ -358,6 +381,8 @@
     \end{bmatrix}
   \end{equation}
 
+  \paragraph{}
+  Seguidamente, buscamos los autovalores en la de menor dimensión:
 
   \begin{align}
     det(A^T A - \lambda I)
@@ -380,6 +405,9 @@
     \end{cases}
   \end{align}
 
+  \paragraph{}
+  A partir de los autovalores obtenemos los valores singulares:
+
   \begin{align}
     \Sigma =
     \begin{bmatrix}
@@ -400,7 +428,8 @@
     \end{bmatrix}
   \end{align}
 
-
+  \paragraph{}
+  Ahora calculamos los autovectores asociados a cada autovalor:
 
   \begin{align}
     \lambda_1 = 3 &\Rightarrow
@@ -473,6 +502,8 @@
     \end{bmatrix}
   \end{align}
 
+  \paragraph{}
+  El siguiente paso es normalizar la matriz de autovectores obtenida para llegar a $V$:
 
   \begin{align}
     v_1 &= \frac{v_1^*}{\norm{v_1^*}} =
@@ -495,7 +526,6 @@
     \end{bmatrix} \\
   \end{align}
 
-
   \begin{align}
     V =
     \begin{bmatrix}
@@ -507,6 +537,9 @@
       \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{6}} & \frac{1}{\sqrt{3}} \\
     \end{bmatrix}
   \end{align}
+
+  \paragraph{}
+  Por último, obtenemos los vectores de $U$ a partir de las propiedades que se indican:
 
   \begin{align}
     u_1 &=
@@ -597,6 +630,8 @@
     \end{bmatrix}
   \end{align}
 
+  \paragraph{}
+  Las matrices resultantes se muestran a continuación:
 
   \begin{align}
     A &=
